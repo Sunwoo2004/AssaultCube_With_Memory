@@ -10,6 +10,7 @@ public:
 
 public: //기능리스트
 	void OnBulletHack();
+	void OnHealthHack();
 
 
 public:

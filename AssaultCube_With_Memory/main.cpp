@@ -18,6 +18,7 @@ int main()
 
 	hack->MainProcess();
 
+	delete hack;
 
 	return 0;
 }

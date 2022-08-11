@@ -27,17 +27,32 @@ void CHack::Init()
 
 void CHack::MainProcess()
 {
+	int iCase = 0;
 	cout << "Service Start.." << endl;
 	while (true)
 	{
 		cout << "총알무한 : 1, 체력무한 : 2" << endl;
-
+		cout << ">>";
+		cin >> iCase;
+		OnHack(iCase);
+		system("cls");
 	}
 }
 
 void CHack::OnHack(int iCase)
 {
-
+	switch (iCase)
+	{
+	case 1:
+		OnBulletHack();
+		break;
+	case 2:
+		OnHealthHack();
+		break;
+	default:
+		//cout << "정의되지 않은 기능입니다." << endl;
+		break;
+	}
 }
 
 void CHack::OnBulletHack()
@@ -53,4 +68,9 @@ void CHack::OnBulletHack()
 		BYTE bArray[] = { 0xFF, 0x08 };
 		memcpy((BYTE*)BULLET, &bArray, sizeof bArray / sizeof bArray[0]);
 	}
+}
+
+void CHack::OnHealthHack()
+{
+
 }
