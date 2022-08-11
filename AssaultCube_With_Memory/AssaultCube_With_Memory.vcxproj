@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Hack.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Memory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Hack.h" />
     <ClInclude Include="Memory.h" />
     <ClInclude Include="Offset.h" />
     <ClInclude Include="stdafx.h" />

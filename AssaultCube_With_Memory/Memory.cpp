@@ -44,6 +44,11 @@ DWORD CMemory::GetProcessID(const char* procName)
 	return procID;
 }
 
+HANDLE CMemory::GetHandle()
+{
+	return hProcess;
+}
+
 BOOL CMemory::GetProcessData()
 {
 	while (true)
