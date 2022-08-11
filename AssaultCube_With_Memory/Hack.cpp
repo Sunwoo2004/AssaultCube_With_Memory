@@ -60,15 +60,15 @@ void CHack::OnBulletHack()
 	static int onoffcheck = false;
 	if (onoffcheck == false)
 	{
+		onoffcheck = true;
 		BYTE bArray[] = { 0x90, 0x90 };
 		WriteProcessMemory(m_hProcess, (BYTE*)BULLET, &bArray, sizeof bArray / sizeof bArray[0], NULL);
-		//memcpy((BYTE*)BULLET, &bArray, sizeof bArray / sizeof bArray[0]);
 	}
 	else
 	{
+		onoffcheck = false;
 		BYTE bArray[] = { 0xFF, 0x08 };
 		WriteProcessMemory(m_hProcess, (BYTE*)BULLET, &bArray, sizeof bArray / sizeof bArray[0], NULL);
-		//memcpy((BYTE*)BULLET, &bArray, sizeof bArray / sizeof bArray[0]);
 	}
 }
 
