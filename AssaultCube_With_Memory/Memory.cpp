@@ -16,8 +16,8 @@ CMemory::~CMemory()
 
 void CMemory::Init()
 {
-	dwPID = 0;
-	hProcess = 0;
+	m_dwPID = 0;
+	m_hProcess = 0;
 }
 
 DWORD CMemory::GetProcessID(const char* procName)
@@ -46,7 +46,7 @@ DWORD CMemory::GetProcessID(const char* procName)
 
 HANDLE CMemory::GetHandle()
 {
-	return hProcess;
+	return m_hProcess;
 }
 
 BOOL CMemory::GetProcessData()
@@ -58,17 +58,17 @@ BOOL CMemory::GetProcessData()
 		if (PID > 0)
 		{
 			//프로세스 아이디를 찾았다면
-			cout << "Process Found!!" << endl;
-			dwPID = PID;
+			cout << "Process Found!!, PID : " << m_dwPID << endl;
+			m_dwPID = PID;
 			break; //반복문 나옴
 		}
 		Sleep(100);
 	}
 
 	//프로세스를 연다
-	hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwPID);
+	m_hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, m_dwPID);
 	
-	if (hProcess == 0)
+	if (m_hProcess == 0)
 	{
 		cout << "프로세스를 열지 못했습니다." << endl;
 		return FALSE;

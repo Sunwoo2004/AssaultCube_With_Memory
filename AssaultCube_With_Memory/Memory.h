@@ -2,8 +2,8 @@
 class CMemory
 {
 private:
-	DWORD dwPID;
-	HANDLE hProcess;
+	DWORD m_dwPID;
+	HANDLE m_hProcess;
 public:
 	void Init();
 	DWORD GetProcessID(const char* procName);
