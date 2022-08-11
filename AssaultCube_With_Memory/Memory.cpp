@@ -58,8 +58,8 @@ BOOL CMemory::GetProcessData()
 		if (PID > 0)
 		{
 			//프로세스 아이디를 찾았다면
-			cout << "Process Found!!, PID : " << m_dwPID << endl;
 			m_dwPID = PID;
+			cout << "Process Found!!, PID : " << m_dwPID << endl;
 			break; //반복문 나옴
 		}
 		Sleep(100);
