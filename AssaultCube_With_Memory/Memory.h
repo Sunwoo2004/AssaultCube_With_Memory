@@ -7,7 +7,7 @@ private:
 public:
 	void Init();
 	DWORD GetProcessID(const char* procName);
-	void GetProcessData();
+	BOOL GetProcessData();
 public:
 	CMemory();
 	~CMemory();

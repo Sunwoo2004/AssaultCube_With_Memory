@@ -2,6 +2,8 @@
 #include "Memory.h"
 #include <TlHelp32.h>
 
+using namespace std;
+
 CMemory::CMemory()
 {
 	Init();
@@ -42,16 +44,30 @@ DWORD CMemory::GetProcessID(const char* procName)
 	return procID;
 }
 
-void CMemory::GetProcessData()
+BOOL CMemory::GetProcessData()
 {
 	while (true)
 	{
+		cout << "Process Finding.." << endl;
 		DWORD PID = GetProcessID("ac_client.exe");
 		if (PID > 0)
 		{
 			//프로세스 아이디를 찾았다면
+			cout << "Process Found!!" << endl;
 			dwPID = PID;
+			break; //반복문 나옴
 		}
 		Sleep(100);
 	}
+
+	//프로세스를 연다
+	hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwPID);
+	
+	if (hProcess == 0)
+	{
+		cout << "프로세스를 열지 못했습니다." << endl;
+		return FALSE;
+	}
+
+	return TRUE;
 }
