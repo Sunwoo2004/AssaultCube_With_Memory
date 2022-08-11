@@ -6,6 +6,8 @@ private:
 	HANDLE hProcess;
 public:
 	void Init();
+	DWORD GetProcessID(const char* procName);
+	void GetProcessData();
 public:
 	CMemory();
 	~CMemory();

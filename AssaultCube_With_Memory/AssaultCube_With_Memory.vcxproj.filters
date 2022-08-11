@@ -16,6 +16,9 @@
     <Filter Include="Memory">
       <UniqueIdentifier>{1665beba-394a-4322-8319-e6dbf5786943}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Setting">
+      <UniqueIdentifier>{fd5bc170-26a8-4933-8965-5acb8e65f7e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -31,6 +34,9 @@
     </ClInclude>
     <ClInclude Include="Memory.h">
       <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset.h">
+      <Filter>Setting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
