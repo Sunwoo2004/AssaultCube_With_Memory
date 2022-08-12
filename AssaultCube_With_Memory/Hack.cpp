@@ -74,5 +74,17 @@ void CHack::OnBulletHack()
 
 void CHack::OnHealthHack()
 {
-
+	static int onoffcheck = false;
+	if (onoffcheck == false)
+	{
+		onoffcheck = true;
+		BYTE bArray[] = { 0x90, 0x90, 0x90 };
+		WriteProcessMemory(m_hProcess, (BYTE*)HEALTH, &bArray, sizeof bArray / sizeof bArray[0], NULL);
+	}
+	else
+	{
+		onoffcheck = false;
+		BYTE bArray[] = { 0x29, 0x73, 0x04 };
+		WriteProcessMemory(m_hProcess, (BYTE*)HEALTH, &bArray, sizeof bArray / sizeof bArray[0], NULL);
+	}
 }
