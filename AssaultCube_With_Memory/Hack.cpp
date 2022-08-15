@@ -39,7 +39,7 @@ void CHack::MainProcess()
 	}
 }
 
-void CHack::OnHack(int iCase)
+void CHack::OnHack(int &iCase) //포인터 주소를 받는다
 {
 	switch (iCase)
 	{
